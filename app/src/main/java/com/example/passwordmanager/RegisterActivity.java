@@ -37,28 +37,28 @@ public class RegisterActivity extends AppCompatActivity {
             String confirm = confirmPasswordField.getText().toString();
 
             if (username.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
-                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             if (!password.equals(confirm)) {
-                Toast.makeText(this, "Passwords don't match", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Пароли не совпадают", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             // Check if username already exists
             if (bd.checkUsernameExist(username)) {
-                Toast.makeText(this, "Username already exists", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Имя пользователя уже существует", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             long result = bd.addUser(username, password);
 
             if (result > 0) {
-                Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Регистрация прошла успешно", Toast.LENGTH_SHORT).show();
                 finish(); // Выход из активности.
             } else {
-                Toast.makeText(this, "Registration failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Регистрация не удалась", Toast.LENGTH_SHORT).show();
             }
         });
 

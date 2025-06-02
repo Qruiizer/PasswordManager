@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
             if (bd.checkUser(username, password)) {
                 startActivity(new Intent(LoginActivity.this, PasswordListActivity.class));
             } else {
-                Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Неверное имя или пароль", Toast.LENGTH_SHORT).show();
             }
         });
 
